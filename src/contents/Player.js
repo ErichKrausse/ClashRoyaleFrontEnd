@@ -20,6 +20,7 @@ const Player = ({match}) => {
   },[]) 
   const _player = [{...pj}];
   const currentclan = _player[0].clan;
+  console.log(_player[0]);
   const tojoin = _player[0].clanesToJoin;
     const columns = [
       {
@@ -66,6 +67,9 @@ const Player = ({match}) => {
         sortable:true
       }
     ];
+    const onClickHanddler = (state) =>{      
+      window.location = ('/clan/'+state.nombre);
+  }
     return (      
       <div className='table'>
         <DataTable 
@@ -86,6 +90,8 @@ const Player = ({match}) => {
                 <DataTable 
               overflowY
                title="Clans can join to"
+               onRowClicked={onClickHanddler}
+                 highlightOnHover
                 theme="dark" 
                 data={tojoin} 
                 columns={columns2} 

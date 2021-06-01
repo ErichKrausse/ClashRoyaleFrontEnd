@@ -192,7 +192,7 @@ class PlayerForm extends React.Component {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button disabled = {!this.state.name.length>0 || !this.state.clan.length>0||!this.state.favcard.length>0}onClick={this.handleCreate} color="primary">
+            <Button disabled = {!this.state.name.length>0}onClick={this.handleCreate} color="primary">
               Create
             </Button>
           </DialogActions>
